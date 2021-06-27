@@ -47,19 +47,13 @@ class App extends React.Component {
 
   render () {
     let names = Object.keys(data).map( name => <option value={name}/>  )
-    let field = fields.map( f => <option value={f} >{f}</option> )
 
     let collegeData = (Object.keys(data).includes(this.state.n)) ? fields.map( f => <tr><td>{f}</td><td>{this.state.d[f]}</td></tr> ) : []
 
     return (
     <div className="App">
-      <div className="container-fluid p-5">
+      <div className="container-fluid p-5 pt-2">
         <form onSubmit={this.handleSubmit} className="pb-5">
-
-          {/* <label className="form-label">Select Features to view: <br /> (Hold Ctrl/Cmd to select multiple)</label>
-          <select multiple={true} value={this.state.f} onChange={this.handleChange} className="form-select" multiple aria-label="multiple select example" name="features" required>
-            {field}
-          </select> */}
 
 
           <label htmlFor="exampleDataList" className="form-label pt-4">College name:</label>
@@ -68,7 +62,7 @@ class App extends React.Component {
               {names}
           </datalist>
 
-          <input className="btn btn-dark mt-3" type="submit" value="Search" />
+          <input className="btn btn-outline-dark me-2 mt-3" type="submit" value="Search" />
         </form>
 
         <table className="table table-striped table-hover">
